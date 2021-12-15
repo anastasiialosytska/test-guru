@@ -22,3 +22,12 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+Сущности проекта Test-Guru:
+- пользователь (user)
+- автор теста (author)
+- тест (test)
+- вопрос (question)
+- ответ (unsver)
+- результат (result)
+
