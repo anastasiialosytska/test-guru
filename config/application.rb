@@ -16,7 +16,10 @@ module TestGuru
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
     #
-    # config.time_zone = "Central Time (US & Canada)"
+    config.time_zone = "Europe/Kiev"
+    config.i18n.default_locale = :ru
+
+    VERSION = '1.0.0'
     # config.eager_load_paths << Rails.root.join("extras")
   end
 end
