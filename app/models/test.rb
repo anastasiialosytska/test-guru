@@ -8,8 +8,12 @@ class Test < ApplicationRecord
   scope :medium, -> { where(level: 2..4) }
   scope :difficult, -> { where('level >=5 ') }
   scope :tests_by_category, -> (category_title) { joins("INNER JOIN categories ON tests.category_id = categories.id").
-    where(categories: {title: category_title}).order('tests.title DESC').pluck(:title) }
+    where(categories: {title: category_title}) }
 
   validates :title, presence: true, uniqueness: { scope: :level }
   validates :level, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+
+  def self.sort_tests_by_category(category_title)
+    self.tests_by_category(category_title).order('tests.title DESC').pluck(:title)
+  end
 end
