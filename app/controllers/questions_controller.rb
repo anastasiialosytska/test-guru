@@ -8,19 +8,16 @@ class QuestionsController < ApplicationController
     @questions = @test.questions
   end
 
-  def show
-    
+  def show 
   end
 
   def new
-
   end
 
   def create
     @question = @test.questions.new(question_params)
 
-    if @question.valid?
-      @question.save
+    if @question.save
       render plain: @question.inspect
     else
       render plain: @question.errors.messages
@@ -40,7 +37,8 @@ class QuestionsController < ApplicationController
   end
 
   def find_test
-    @test = Test.find(params[:test_id])
+    test_id = Question.find_by(id: params[:id])&.test_id
+    @test = Test.find(test_id || params[:test_id])
   end
 
   def find_question
