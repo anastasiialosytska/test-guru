@@ -2,7 +2,8 @@ class Test < ApplicationRecord
   belongs_to :category
   belongs_to :author, class_name: 'User', foreign_key: :author_id
   has_many :questions
-  has_and_belongs_to_many :users
+  has_many :test_passages
+  has_many :users, through: :test_passages
 
   scope :easy, -> { where(level: 0..1) }
   scope :medium, -> { where(level: 2..4) }
@@ -15,5 +16,9 @@ class Test < ApplicationRecord
 
   def self.sort_tests_by_category(category_title)
     self.tests_by_category(category_title).order('tests.title DESC').pluck(:title)
+  end
+
+  def questions_count
+    self.questions.count
   end
 end
