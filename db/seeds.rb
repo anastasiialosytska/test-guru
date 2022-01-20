@@ -1,15 +1,15 @@
-users = User.create({first_name: 'Sergey', last_name: 'Ivanov', email: 'sergey.ivanov@gmail.com'},
+users = User.create([{first_name: 'Sergey', last_name: 'Ivanov', email: 'sergey.ivanov@gmail.com'},
                     {first_name: 'Anton', last_name: 'Sidorov', email: 'anton.sidorov@gmail.com'},
                     {first_name: 'Nikolay', last_name: 'Sergeev', email: 'nikolay.sergeev@gmail.com'},
                     {first_name: 'Elena', last_name: 'Petrova', email: 'elena.petrova@gmail.com'},
-                    {first_name: 'Marina', last_name: 'Antonova', email: 'marina.antonova@gmail.com'})
+                    {first_name: 'Marina', last_name: 'Antonova', email: 'marina.antonova@gmail.com'}])
 
-categories = Category.create({title: 'Ruby'}, {title: 'JavaScript'})
+categories = Category.create([{title: 'Ruby'}, {title: 'JavaScript'}])
 
-tests = Test.create({title: 'Тест на знание основ Ruby', category_id: categories[0].id},
-                    {title: 'Тест на знание основ JavaScript', category_id: categories[1].id})
+tests = Test.create!([{title: 'Ruby', category_id: categories[0].id, author_id: users[0].id},
+                    {title: 'JavaScript', category_id: categories[1].id, author_id: users[0].id}])
 
-questions = Question.create({body: 'В каком варианте вы получите число без пропуска строки от пользователя?', test_id: tests[0].id},
+questions = Question.create([{body: 'В каком варианте вы получите число без пропуска строки от пользователя?', test_id: tests[0].id},
                             {body: 'Как называется самый популярный фреймворк языка Ruby для веба?', test_id: tests[0].id},
                             {body: 'Какой метод позволяет привести строку в нижний регистр?', test_id: tests[0].id},
                             {body: 'Чем отличается puts от print?', test_id: tests[0].id},
@@ -18,9 +18,9 @@ questions = Question.create({body: 'В каком варианте вы полу
                             {body: 'Что выведет этот код alert( 20e-1[toString](2) )?', test_id: tests[1].id},
                             {body: 'Какие из этих вызовов синтаксически верно сгенерируют исключение?', test_id: tests[1].id},
                             {body: 'Объявлена функция function F() {}. Чем является F.prototype?', test_id: tests[1].id},
-                            {body: 'Что делает код break me?', test_id: tests[1].id})
+                            {body: 'Что делает код break me?', test_id: tests[1].id}])
 
-answers = Answer.create({body: 'num = gets', question_id: questions[0].id}, {body: 'num = gets.chomp().to_i', question_id: questions[0].id},
+answers = Answer.create([{body: 'num = gets', question_id: questions[0].id}, {body: 'num = gets.chomp().to_i', question_id: questions[0].id},
                         {body: 'num = gets.chomp()', question_id: questions[0].id}, {body: 'Ruby Web', question_id: questions[1].id},
                         {body: 'Ruby Framework', question_id: questions[1].id}, {body: 'Ruby On Rails', question_id: questions[1].id},
                         {body: 'Upcase()', question_id: questions[2].id}, {body: 'down()', question_id: questions[2].id},
@@ -39,4 +39,4 @@ answers = Answer.create({body: 'num = gets', question_id: questions[0].id}, {bod
                         {body: 'Равен undefined', question_id: questions[8].id},
                         {body: 'Ломает интерпретатор javascript', question_id: questions[9].id},
                         {body: 'Выходит из текущего блока цикла или switch на метку «me»', question_id: questions[9].id},
-                        {body: 'Выдает ошибку', question_id: questions[9].id})
+                        {body: 'Выдает ошибку', question_id: questions[9].id}])
