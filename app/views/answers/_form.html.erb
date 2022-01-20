@@ -1,3 +1,9 @@
+<h1><%= answer_header(@answer) %></h1>
+
+<p>
+  <%= @answer.question.body %>
+</p>
+
 <%= form_with  model: [@question, @answer], local: true do |form| %>
   <p>
     <%= form.label :body %>
@@ -12,3 +18,4 @@
   <p><%= form.submit %></p>
 <% end %>
 
+<%= link_to 'Back', question_path(@answer.question) %>

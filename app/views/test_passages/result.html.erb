@@ -9,7 +9,7 @@
 
 <h1>The <%= @test_passage.test.title %> Test was completed!</h1>
 
-<% if @test_passage.test_result >= 85.0 %>
+<% if @test_passage.success? %>
   <h2>Your result: <span class = 'green'><%= @test_passage.test_result %> %</span>. Test passed successfully</h2>
 <% else %>
   <h2>Your result: <span class = 'red'><%= @test_passage.test_result %> %</span>. Test failed, try again</h2>
