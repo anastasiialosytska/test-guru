@@ -1,0 +1,13 @@
+<h1><%= link_to 'Test-Guru', tests_path %></h1>
+
+<% if logged_in? %>
+  <h3>Hello, <b><%= current_user.first_name %></b> Guru</h3>
+  <p><%= link_to 'All Tests', tests_path %>
+  <p><%= button_to 'Exit', sessions_destroy_path, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+<% else %>
+  <h3>Please signup or login to became Test-Guru</h3>
+  <p><%= link_to 'Signup', users_new_path %></p>
+  <p><%= link_to 'Login', sessions_new_path %></p>
+<% end %>
+
+
