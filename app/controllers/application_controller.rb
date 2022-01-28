@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
 
-  before_action :get_url
   before_action :authenticate_user!
 
   helper_method :current_user,
@@ -9,6 +8,7 @@ class ApplicationController < ActionController::Base
   private
 
   def authenticate_user!
+    get_url
     unless current_user
       redirect_to login_path, alert: 'Are you a Guru? Verify your Email and Password please'
     end
@@ -23,6 +23,6 @@ class ApplicationController < ActionController::Base
   end
 
   def get_url
-    cookies[:action] = request.original_url
+    cookies[:user_request] = request.original_url
   end
 end

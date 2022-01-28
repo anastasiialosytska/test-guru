@@ -1,4 +1,6 @@
-<h1>Tests</h1>
+<h1>Hello, <b><%= current_user.first_name %></b> Guru</h1>
+      
+<h2>Tests</h2>
 
 <table>
   <tr>
@@ -19,4 +21,4 @@
   <% end %>
 </table>
 
-<p><%= link_to 'Back', root_path %></p>
+<p><%= button_to 'Exit', sessions_destroy_path, method: :delete, data: { confirm: 'Are you sure?' } %></p>
