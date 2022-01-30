@@ -8,10 +8,9 @@ module ApplicationHelper
   end
 
   def flash_message
-    unless flash.empty?
-      flash.map do |key, msg|
-        content_tag :div, msg, id: key, class: 'flash'
+    flash.map do |key, msg|
+      next if msg.blank?
+      content_tag :div, msg, id: key, class: 'flash'
       end.join.html_safe
-    end
   end
 end

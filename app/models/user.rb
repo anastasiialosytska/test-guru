@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :tests, through: :test_passages
   has_many :owned_tests, class_name: 'Test', foreign_key: :author_id
 
-  validates :email, presence: true, uniqueness: true, format: { with: /([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}/ }
+  validates :email, presence: true, uniqueness: true, format: { with: /\A(?:[-_+.a-z0-9]+@)((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
   validates :password, presence: true, if: Proc.new { |u| u.password_digest.blank? }
   validates :password, confirmation: true
 

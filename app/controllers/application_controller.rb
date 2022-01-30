@@ -8,8 +8,8 @@ class ApplicationController < ActionController::Base
   private
 
   def authenticate_user!
-    get_url
     unless current_user
+      get_url
       redirect_to login_path, alert: 'Are you a Guru? Verify your Email and Password please'
     end
   end
