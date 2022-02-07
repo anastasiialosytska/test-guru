@@ -1,15 +1,15 @@
-<h1>Tests</h1>
+<h1><%= t('.header') %></h1>
 
 <p>
-  <%= link_to 'New test', new_admin_test_path %>
+  <%= link_to t('.new_test'), new_admin_test_path %>
 </p>
 
 <table>
   <tr>
-    <td>Title</td>
-    <td>Level</td>
-    <td>Quantity of questions</td>
-    <td colspan="3">Actions</td>
+    <td><%= t('.title') %></td>
+    <td><%= t('.level') %></td>
+    <td><%= t('.quantity_of_questions') %></td>
+    <td colspan="3"><%= t('.action') %></td>
   </tr>
 
   <% @tests.each do |test| %>
@@ -17,13 +17,13 @@
       <td><%= test.title %></td>
       <td><%= test.level %></td>
       <td><%= test.questions.count %></td>
-      <td><%= link_to 'Show', admin_test_path(test) %></td>
-      <td><%= link_to 'Edit', edit_admin_test_path(test) %></td>
+      <td><%= link_to t('.show'), admin_test_path(test) %></td>
+      <td><%= link_to t('.edit'), edit_admin_test_path(test) %></td>
       <td>
-        <%= link_to 'Delete',
+        <%= link_to t('.delete'),
                     admin_test_path(test),
                     method: :delete,
-                    data: { confirm: 'Are you sure?' } %>
+                    data: { confirm: t('.confirm') } %>
       </td>
     </tr>
   <% end %>

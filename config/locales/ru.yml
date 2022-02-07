@@ -1,0 +1,113 @@
+ru:
+
+  layouts:
+    application:
+      welcome: "Добро пожаловать, %{email} Гуру"
+      logout: "Выйти"
+    footer:
+      author_name: "Анастасия Лосицкая"
+      app_description: "Приложение для создания и прохождения тестов"
+      link_to_thinknetica: "Тренировочный проект в онлайн школе Thinknetica"
+
+  devise:
+    confirmations:
+      new:
+        header: "Повторно отправить инструкции по подтверждению"
+        submit: "Получить инструкции"
+    registrations:
+      new:
+        header: "Стань Гуру"
+        first_name: "Имя"
+        last_name: "Фамилия"
+        password: "Пароль"
+        password_prompt: "минимум %{count} символов"
+        password_confirmation: "Подтверждение пароля"
+        sign_up: "Зарегистрироваться"
+    sessions:
+      new:
+        header: "Войдите во врата Гуру"
+        password: "Пароль"
+        remember_me: "Запомнить меня"
+        enter: "Войти"
+    shared:
+      links:
+        login: "Войти"
+        sign_up: "Зарегистрироваться"
+        forgot_password: "Забыли пароль?"
+        confirmation_instructions: "Не получили инструкции по подтверждению?"
+        unlock_instructions: "Не получили инструкции по разблокировке?"
+
+  helpers:
+    submit:
+      test:
+        create: "Создать тест"
+        update: "Обновить тест"
+      confirmations:
+        new: "Повторно отправить инструкции по подтверждению"
+    label:
+      test:
+        title: "Название"
+        level: "Уровень"
+        category_id: "Категория"
+    select:
+      prompt: "Выберите вариант"
+
+  shared:
+    errors:
+      header:
+        few: "Обнаружено %{count} ошибки"
+        many: "Обнаружено %{count} ошибок"
+        one: "Обнаружена %{count} ошибка"
+        other: "Обнаружено %{count} ошибки"
+
+  tests:
+    index:
+      header: "Доступные тесты"
+      title: "Название"
+      level: "Уровень"
+      quantity_of_questions: "Количество вопросов"
+      action: "Действие"
+      start: "Начать"
+
+  test_passages:
+    result:
+      header: "Тест %{title} завершён!"
+      test_result: "Ваш результат:"
+      success: "Тест пройден успешно"
+      non_success: "Тест не пройден, попробуйте ещё раз"
+      restart: "Начать заново"
+      all_tests: "Показать все тесты"
+    show:
+      header: "Прохождение теста %{title}"
+      question: "Вопрос %{current_question} из %{questions_count}"
+      submit: "Далее"
+
+  admin:
+    tests:
+      create:
+        success: "Тест создан успешно"
+      index:
+        header: "Доступные тесты"
+        new_test: "Новый тест"
+        title: "Название"
+        level: "Уровень"
+        quantity_of_questions: "Количество вопросов"
+        action: "Действия"
+        show: "Просмотреть"
+        edit: "Отредактировать"
+        delete: "Удалить"
+        confirm: "Вы уверены?"
+
+    nav:
+      header: "TestGuru | Панель администратора"
+      welcome: "Добро пожаловать, %{email} Гуру"
+      logout: "Выйти"
+
+  tests_mailer:
+    completed_test:
+      subject: "Вы успешно завершили тест на TestGuru!"
+
+  flash:
+    welcome:
+      with_name: "Добро пожаловать, %{name}!"
+      no_name: "Добро пожаловать, Гуру!"
