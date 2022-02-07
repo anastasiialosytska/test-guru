@@ -17,7 +17,7 @@ module TestGuru
     # in config/environments, which are processed later.
     #
     config.time_zone = "Europe/Kiev"
-    config.i18n.default_locale = :en
+    config.i18n.default_locale = :ru
 
     I18n.config.available_locales = [:en, :ru]
 
