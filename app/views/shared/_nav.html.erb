@@ -1,11 +1,13 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
 <nav class="navbar navbar-light bg-light">
   <% if user_signed_in? %>
     <span class="navbar-brand">
       <% if current_user.admin? %>
-        <%= link_to 'TestGuru', admin_tests_path %> |
-        <%= t('.admin_panel') %>
+        <button class="btn btn-outline-primary"><i class="bi bi-house-door"></i> <%= link_to 'TestGuru', root_path %></button> |
+        <button class="btn btn-outline-primary"><i class="bi bi-pencil"></i> <%= link_to t('.admin_panel'), admin_tests_path %></button>
       <% else %>
-        <%= link_to 'TestGuru', root_path %>
+        <button class="btn btn-outline-primary"><i class="bi bi-house-door"></i> <%= link_to 'TestGuru', root_path %></button>
       <% end %>
     </span>
     <span class="navbar-text">
@@ -22,3 +24,5 @@
     </span>
   <% end %>
 </nav>
+
+
