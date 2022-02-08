@@ -1,8 +1,5 @@
 en:
   layouts:
-    application:
-      welcome: "Welcome, %{email} Guru"
-      logout: "Exit"
     footer:
       author_name: "Anastasiia Losytska"
       app_description: "Application for creating and passing tests"
@@ -54,11 +51,18 @@ en:
       header:
         one: "%{count} error detected"
         other: "%{count} errors detected"
+    nav:
+      welcome: "Welcome, %{email} Guru"
+      logout: "Logout"
+      login: "Log in"
+      signup: "Sign up"
+      admin_panel: "Admin Panel"
 
   tests:
     index:
       header: "Tricky Tests"
       title: "Title"
+      category: "Category"
       level: "Level"
       quantity_of_questions: "Quantity of questions"
       action: "Action"
@@ -85,6 +89,7 @@ en:
         header: "Tricky Tests"
         new_test: "New test"
         title: "Title"
+        category: "Category"
         level: "Level"
         quantity_of_questions: "Quantity of questions"
         action: "Actions"
@@ -92,10 +97,6 @@ en:
         edit: "Edit"
         delete: "Delete"
         confirm: "Are you sure?"
-    nav:
-      header: "TestGuru | Admin Panel"
-      welcome: "Welcome, %{email} Guru"
-      logout: "Exit"
 
   tests_mailer:
     completed_test:

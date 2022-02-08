@@ -21,4 +21,8 @@ class Test < ApplicationRecord
   def questions_count
     self.questions.count
   end
+
+  def category
+    Category.find(self.category_id).title
+  end
 end

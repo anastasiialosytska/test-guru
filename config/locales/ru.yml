@@ -1,9 +1,6 @@
 ru:
 
   layouts:
-    application:
-      welcome: "Добро пожаловать, %{email} Гуру"
-      logout: "Выйти"
     footer:
       author_name: "Анастасия Лосицкая"
       app_description: "Приложение для создания и прохождения тестов"
@@ -59,11 +56,18 @@ ru:
         many: "Обнаружено %{count} ошибок"
         one: "Обнаружена %{count} ошибка"
         other: "Обнаружено %{count} ошибки"
+    nav:
+      welcome: "Добро пожаловать, %{email} Гуру"
+      logout: "Выйти"
+      login: "Войти"
+      signup: "Зарегистрироваться"
+      admin_panel: "Панель администратора"
 
   tests:
     index:
       header: "Доступные тесты"
       title: "Название"
+      category: "Категория"
       level: "Уровень"
       quantity_of_questions: "Количество вопросов"
       action: "Действие"
@@ -90,6 +94,7 @@ ru:
         header: "Доступные тесты"
         new_test: "Новый тест"
         title: "Название"
+        category: "Категория"
         level: "Уровень"
         quantity_of_questions: "Количество вопросов"
         action: "Действия"
@@ -97,11 +102,6 @@ ru:
         edit: "Отредактировать"
         delete: "Удалить"
         confirm: "Вы уверены?"
-
-    nav:
-      header: "TestGuru | Панель администратора"
-      welcome: "Добро пожаловать, %{email} Гуру"
-      logout: "Выйти"
 
   tests_mailer:
     completed_test:
