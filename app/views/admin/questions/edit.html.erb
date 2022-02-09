@@ -1,12 +1,21 @@
-<h1><%= question_header(@question) %></h1>
+<h2 class="mt-3 text-center border border-primary rounded-pill"><%= t('.header') %></h2>
 
-<%= form_with model: [:admin, @question] do |form| %>
-  <p>
-    <%= form.label :body %><br>
-    <%= form.text_field :body %>
-  </p>
+<div class="row justify-content-center mt-3">
+  <div class="col col-lg-5">
+    <div class="card border-secondary">
+      <div class="card-body">
+        <%= form_with model: [:admin, @question] do |form| %>
+          <div class="form-group">
+            <p>
+              <%= form.label :body %><br>
+              <%= form.text_field :body, class: 'form-control' %>
+            </p>
 
-  <p><%= form.submit %></p>
-
-  <p><%= link_to 'Back', admin_test_path(@test) %></p>
-<% end %>
+            <p class="text-center"><%= form.submit class: 'btn btn-primary mt-2' %></p>
+          </div>
+        <% end %>
+        <p><%= link_to t('.back'), admin_test_path(@test), class: 'btn btn-outline-secondary mt-3' %></p>
+      </div>
+    </div>
+  </div>
+</div>

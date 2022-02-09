@@ -1,6 +1,12 @@
 <li>
   <%= answer.body %><br>
-  <%= link_to 'Show', admin_answer_path(answer) %> |
-  <%= link_to 'Edit', edit_admin_answer_path(answer) %> |
-  <%= link_to 'Delete', admin_answer_path(answer), method: :delete, data: { confirm: 'Are you sure?' } %>
+  <%= link_to admin_answer_path(answer) do %> 
+    <i class="bi bi-eye"></i>
+  <% end %>|
+  <%= link_to edit_admin_answer_path(answer) do %>
+    <i class="bi bi-pencil"></i>
+  <% end %>|
+  <%= link_to admin_answer_path(answer), method: :delete, data: { confirm: t('.confirm') } do %>
+    <i class="bi bi-trash"></i>
+  <% end %>
 </li>

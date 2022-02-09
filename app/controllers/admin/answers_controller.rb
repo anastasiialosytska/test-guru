@@ -13,8 +13,8 @@ class Admin::AnswersController < ApplicationController
 
   def create
     @answer = @question.answers.new(answer_params)
-    if @answer.save!
-      redirect_to [:admin, @answer], notice: 'Answer was successfully created'
+    if @answer.save
+      redirect_to [:admin, @answer], success: t('.success')
     else
       render :new
     end
