@@ -1,13 +1,11 @@
 .flash {
-  border: 2px solid;
-  padding: 10px;
-  border-radius: 5px;
+  class: 'alert';
 }
 
 .flash.alert {
-  border-color: #ef2727;
+  class: 'alert alert-success';
 }
 
 .flash.notice {
-  border-color: #3c85e0;
+  class: 'alert alert-primary';
 }

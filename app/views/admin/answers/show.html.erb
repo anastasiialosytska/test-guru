@@ -1,15 +1,20 @@
-<h1>Question</h1>
+<div class="container mt-3">
+  <p class="fs-4">
+    <b><%= t('.header') %></b>
+    <%= @answer.question.body %>
+   </p>
 
-<p><%= @answer.question.body %></p>
+  <p class="fs-4">
+    <b><%= t('.answer') %></b>
+    <%= @answer.body %>
+  </p>
 
-<p>
-  <b>Answer:</b>
-  <%= @answer.body %>
-</p>
+  <p class="fs-4">
+    <b><%= t('.correct') %></b>
+    <%= @answer.correct %>
+  </p>
 
-<p>
-  <b>Correct:</b>
-  <%= @answer.correct %>
-</p>
+  <p><%= link_to t('.back'), admin_question_path(@answer.question), type: "button", class: "btn btn-outline-secondary mt-3" %></p>
+</div>
 
-<%= link_to 'Back', admin_question_path(@answer.question) %>
+

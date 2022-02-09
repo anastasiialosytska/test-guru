@@ -1,34 +1,45 @@
-<p>
-  <strong>Title:</strong>
-  <%= @test.title %>
-</p>
+<div class="container mt-3 mb-4">
+  <h3>
+    <strong><%= t('.title') %></strong>
+    <%= @test.title %>
+  </h3>
 
-<p>
-  <strong>Level:</strong>
-  <%= @test.level %>
-</p>
+  <h3>
+    <strong><%= t('.level') %></strong>
+    <%= @test.level %>
+  </h3>
+</div>
 
-<h2>Questions:</h2>
+<h4><%= t('.questions') %></h4>
 
-<p><%= link_to 'Add question', new_admin_test_question_path(@test) %></p>
-
-<table>
+<table class="table">
   <tr>
     <td colspan="3"></td>
   </tr>
   <% @questions.each do |question| %>
   <tr>
     <td><%= question.body %></td>
-    <td><%= link_to 'Show', admin_question_path(question) %></td>
-    <td><%= link_to 'Edit', edit_admin_question_path(question) %></td>
     <td>
-      <%= link_to 'Delete',
-                  admin_question_path(question),
+      <%= link_to admin_question_path(question) do %>
+        <i class="bi bi-eye"></i>
+      <% end %>
+    </td>
+    <td>
+      <%= link_to edit_admin_question_path(question) do %>
+        <i class="bi bi-pencil"></i>
+      <% end %>
+    </td>
+    <td>
+      <%= link_to admin_question_path(question),
                   method: :delete,
-                  data: { confirm: 'Are you sure?' }  %>
+                  data: { confirm: t('.confirm') } do %>
+        <i class="bi bi-trash"></i>
+      <% end %>
     </td>
   </tr>
   <% end %>
 </table>
 
-<p><%= link_to 'Back', admin_tests_path %></p>
+<p><%= link_to t('.add_question'), new_admin_test_question_path(@test), type: "button", class: "btn btn-outline-secondary" %></p>
+
+<p><%= link_to t('.back'), admin_tests_path, type: "button", class: "btn btn-outline-secondary mt-3" %></p>

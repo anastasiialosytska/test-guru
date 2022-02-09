@@ -24,7 +24,7 @@ class Admin::QuestionsController < ApplicationController
     @question = @test.questions.new(question_params)
 
     if @question.save
-      redirect_to [:admin, @question]
+      redirect_to [:admin, @question], success: t('.success')
     else
       render plain: @question.errors.messages
     end
