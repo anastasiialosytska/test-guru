@@ -135,6 +135,11 @@ ru:
         back: "Назад"
       edit:
         header: "Редактирование теста %{title}"
+      gists:
+        header: "Список созданных Gist"
+        number: "Номер"
+        question: "Вопрос"
+        user: "Пользователь"
     questions:
       create:
         success: "Вопрос создан успешно"

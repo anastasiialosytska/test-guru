@@ -24,8 +24,10 @@ class TestPassagesController < ApplicationController
   def gist
     result = GistQuestionService.new(@test_passage.current_question).call
 
-    @link = result.html_url
-    redirect_to @test_passage, success: t('.success', html_url: view_context.link_to(t('.link'), @link, class: 'alert-link', target: :blank))
+    redirect_to @test_passage, 
+                success: t('.success', html_url: view_context.link_to(t('.link'), result.html_url, class: 'alert-link', target: :blank))
+                
+    Gist.create(user: current_user, question: @test_passage.current_question, github_id: result.id)
   end
 
   private
@@ -36,5 +38,9 @@ class TestPassagesController < ApplicationController
 
   def unprocessable_entity
     flash[:alert] = t('.failure')
+  end
+
+  def all_gists
+    
   end
 end

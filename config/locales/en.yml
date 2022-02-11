@@ -130,6 +130,11 @@ en:
         back: "Back"
       edit:
         header: "Editing the %{title} test"
+      gists:
+        header: "List of created Gists"
+        number: "No"
+        question: "Question"
+        user: "User"
     questions:
       create: 
         success: "Question was successfully created"
