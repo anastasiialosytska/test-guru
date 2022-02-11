@@ -60,6 +60,8 @@ ru:
     select:
       prompt: "Выберите вариант"
 
+  description: "Вопрос теста %{title} с сервиса TestGuru"
+
   shared:
     errors:
       header:
@@ -96,6 +98,10 @@ ru:
       header: "Прохождение теста %{title}"
       question: "Вопрос %{current_question} из %{questions_count}"
       submit: "Далее"
+    gist:
+      success: "Gist успешно сохранен по %{html_url}"
+      failure: "Во время сохранения gist произошла ошибка"
+      link: "ссылке"
 
   admin:
     tests:

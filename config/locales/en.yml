@@ -57,6 +57,8 @@ en:
     select:
       prompt: "Please select"
 
+  description: "A question about %{title} from TestGuru"
+
   shared:
     errors:
       header:
@@ -91,6 +93,10 @@ en:
       header: "Passing the %{title} test"
       question: "Question %{current_question} of %{questions_count}"
       submit: "Next"
+    gist:
+      success: "Gist was successfully created: %{html_url}"
+      failure: "An error occured while saving gist"
+      link: "link"
 
   admin:
     tests:
