@@ -119,6 +119,7 @@ ru:
         edit: "Отредактировать"
         delete: "Удалить"
         confirm: "Вы уверены?"
+        gists: "Список созданных Gist"
       new:
         header: "Создание нового теста"
       form:
@@ -135,11 +136,13 @@ ru:
         back: "Назад"
       edit:
         header: "Редактирование теста %{title}"
-      gists:
+    gists:
+      index:
         header: "Список созданных Gist"
         number: "Номер"
         question: "Вопрос"
         user: "Пользователь"
+        back: "Назад"
     questions:
       create:
         success: "Вопрос создан успешно"

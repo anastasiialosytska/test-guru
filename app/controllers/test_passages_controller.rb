@@ -2,8 +2,6 @@ class TestPassagesController < ApplicationController
 
   before_action :set_test_passage, only: %i[show update result gist]
 
-  rescue_from Octokit::UnprocessableEntity, with: :unprocessable_entity
-
   def show
   end
 
@@ -22,25 +20,23 @@ class TestPassagesController < ApplicationController
   end
 
   def gist
-    result = GistQuestionService.new(@test_passage.current_question).call
+    service = GistQuestionService.new(@test_passage.current_question)
+    result = service.call
 
-    redirect_to @test_passage, 
-                success: t('.success', html_url: view_context.link_to(t('.link'), result.html_url, class: 'alert-link', target: :blank))
+    flash_options = if service.success?
+      { success: t('.success', html_url: view_context.link_to(t('.link'), result.html_url, class: 'alert-link', target: :blank)) }
+    else
+      { alert: t('.failure') }
+    end
+
+    redirect_to @test_passage, flash_options
                 
-    Gist.create(user: current_user, question: @test_passage.current_question, github_id: result.id)
+    current_user.gists.create(question: @test_passage.current_question, github_id: result.id)
   end
 
   private
 
   def set_test_passage
     @test_passage = TestPassage.find(params[:id])
-  end
-
-  def unprocessable_entity
-    flash[:alert] = t('.failure')
-  end
-
-  def all_gists
-    
   end
 end
