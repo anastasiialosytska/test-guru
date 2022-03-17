@@ -60,6 +60,8 @@ ru:
     select:
       prompt: "Выберите вариант"
 
+  description: "Вопрос теста %{title} с сервиса TestGuru"
+
   shared:
     errors:
       header:
@@ -96,6 +98,10 @@ ru:
       header: "Прохождение теста %{title}"
       question: "Вопрос %{current_question} из %{questions_count}"
       submit: "Далее"
+    gist:
+      success: "Gist успешно сохранен по %{html_url}"
+      failure: "Во время сохранения gist произошла ошибка"
+      link: "ссылке"
 
   admin:
     tests:
@@ -113,6 +119,7 @@ ru:
         edit: "Отредактировать"
         delete: "Удалить"
         confirm: "Вы уверены?"
+        gists: "Список созданных Gist"
       new:
         header: "Создание нового теста"
       form:
@@ -129,6 +136,13 @@ ru:
         back: "Назад"
       edit:
         header: "Редактирование теста %{title}"
+    gists:
+      index:
+        header: "Список созданных Gist"
+        number: "Номер"
+        question: "Вопрос"
+        user: "Пользователь"
+        back: "Назад"
     questions:
       create:
         success: "Вопрос создан успешно"

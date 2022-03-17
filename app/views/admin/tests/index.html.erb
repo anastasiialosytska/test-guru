@@ -6,7 +6,11 @@
 
 <table class="table table-hover">
   <tr class="fw-bold">
-    <td><%= t('.title') %></td>
+    <td class="sort-by-title pointer">
+      <%= t('.title') %>
+      <%= octicon 'arrow-up', class: "text-success hide" %>
+      <%= octicon 'arrow-down', class: "text-success hide" %>
+    </td>
     <td><%= t('.category') %></td>
     <td><%= t('.level') %></td>
     <td><%= t('.quantity_of_questions') %></td>
@@ -29,3 +33,7 @@
     </tr>
   <% end %>
 </table>
+
+<p>
+  <%= link_to t('.gists'), admin_gists_path, type: 'button', class: "btn btn-outline-secondary mt-3" %>
+</p>

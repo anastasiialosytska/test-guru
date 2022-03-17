@@ -11,10 +11,7 @@ class User < ApplicationRecord
   has_many :test_passages
   has_many :tests, through: :test_passages
   has_many :owned_tests, class_name: 'Test', foreign_key: :author_id
-
-  # validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
-  # validates :password, presence: true, if: Proc.new { |u| u.password_digest.blank? }
-  # validates :password, confirmation: true
+  has_many :gists
 
   def passed_tests(test_level)
     Test.joins(:tests_users).where(level: test_level).where(tests_users: { user_id: id })

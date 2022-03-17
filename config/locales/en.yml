@@ -57,6 +57,8 @@ en:
     select:
       prompt: "Please select"
 
+  description: "A question about %{title} from TestGuru"
+
   shared:
     errors:
       header:
@@ -91,6 +93,10 @@ en:
       header: "Passing the %{title} test"
       question: "Question %{current_question} of %{questions_count}"
       submit: "Next"
+    gist:
+      success: "Gist was successfully created: %{html_url}"
+      failure: "An error occured while saving gist"
+      link: "link"
 
   admin:
     tests:
@@ -108,6 +114,7 @@ en:
         edit: "Edit"
         delete: "Delete"
         confirm: "Are you sure?"
+        gists: "Gists list"
       new:
         header: "Creating new test:"
       form:
@@ -124,6 +131,13 @@ en:
         back: "Back"
       edit:
         header: "Editing the %{title} test"
+    gists:
+      index:
+        header: "List of created Gists"
+        number: "No"
+        question: "Question"
+        user: "User"
+        back: "Back"
     questions:
       create: 
         success: "Question was successfully created"

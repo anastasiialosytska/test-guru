@@ -4,6 +4,6 @@
   <% elsif key == 'alert' %>
     <%= content_tag :p, message, class: 'alert alert-danger' %>
   <% elsif key == 'success' %>
-    <%= content_tag :p, message, class: 'alert alert-success' %>
+    <%= content_tag :p, message.html_safe, class: 'alert alert-success' %>
   <% end %>
 <% end %>

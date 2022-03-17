@@ -32,6 +32,14 @@ gem 'devise', '~> 4.0'
 
 gem 'jquery-rails'
 gem 'bootstrap', '~> 5.1.3'
+gem 'octicons_helper'
+
+#NETWORKING
+
+gem 'faraday'
+gem "octokit", "~> 4.0"
+
+gem 'dotenv-rails', groups: [:development, :test]
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
