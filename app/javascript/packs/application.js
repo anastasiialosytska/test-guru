@@ -15,3 +15,5 @@ ActiveStorage.start()
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
+require("packs/utilities/sorting")
+
