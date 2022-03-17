@@ -11,7 +11,7 @@ class GistQuestionService
   end
 
   def success?
-    [201, 202, 204].include? @client.last_response.status
+    [201, 202, 204].include?(@client.last_response.status)
   end
 
   private

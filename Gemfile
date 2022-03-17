@@ -32,6 +32,7 @@ gem 'devise', '~> 4.0'
 
 gem 'jquery-rails'
 gem 'bootstrap', '~> 5.1.3'
+gem 'octicons_helper'
 
 #NETWORKING
 
