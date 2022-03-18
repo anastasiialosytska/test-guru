@@ -26,9 +26,6 @@ function sortRowsByTitle() {
 
   var sortedTable = document.createElement('table')
 
-  sortedTable.classList.add('table')
-  sortedTable.classList.add('table-hover')
-
   sortedTable.appendChild(rows[0])
 
   for (var i = 0; i < sortedRows.length; i++) {
@@ -36,6 +33,8 @@ function sortRowsByTitle() {
   }
 
   table.parentNode.replaceChild(sortedTable, table)
+
+  table.classList.add('table table-hover')
 }
 
 function compareRowsAsc(row1, row2) {

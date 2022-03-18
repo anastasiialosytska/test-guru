@@ -2,5 +2,12 @@
   display: inline-block;
   vertical-align: text-top;
   fill: currentColor;
-  color: #228B22;
+}
+
+.password-match {
+  color: green;
+}
+
+.password-not-match {
+  color: red;
 }
