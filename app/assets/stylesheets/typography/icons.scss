@@ -1,5 +1,13 @@
 .octicon {
   display: inline-block;
   vertical-align: text-top;
-  fill: current-color;
+  fill: currentColor;
+}
+
+.password-match {
+  color: green;
+}
+
+.password-not-match {
+  color: red;
 }
