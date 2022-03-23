@@ -36,6 +36,14 @@ class TestPassage < ApplicationRecord
     self.test.questions.where('id <= ?', self.current_question.id).count
   end
 
+  def progress
+    if current_question_number == 1
+      0
+    else
+      ((current_question_number - 1) / self.test.questions_count.to_f) * 100
+    end
+  end
+
   private
 
   def before_validation_set_first_question

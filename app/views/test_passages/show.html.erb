@@ -2,6 +2,10 @@
   <h1 class="text-center border border-primary rounded-pill"><%= t('.header', title: @test_passage.test.title) %></h1>  
 </div>
 
+<div class = "progressBar">
+  <div class="barStatus" data-progress = <%= @test_passage.progress %>></div>
+</div>
+
 <div class="row mt-3">
   <p class="fs-4">
     <%= t('.question', questions_count: @test_passage.test.questions_count, current_question: @test_passage.current_question_number) %>

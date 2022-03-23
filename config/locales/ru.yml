@@ -136,6 +136,8 @@ ru:
         back: "Назад"
       edit:
         header: "Редактирование теста %{title}"
+      form_inline:
+        submit: "Ок"
     gists:
       index:
         header: "Список созданных Gist"

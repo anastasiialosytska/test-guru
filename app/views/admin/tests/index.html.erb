@@ -4,6 +4,8 @@
   <%= link_to t('.new_test'), new_admin_test_path, type: 'button', class: "btn btn-outline-secondary mt-3" %>
 </p>
 
+<%= render 'shared/errors', resource: @test %>
+
 <table class="table table-hover">
   <tr class="fw-bold">
     <td class="sort-by-title pointer">
@@ -19,17 +21,28 @@
 
   <% @tests.each do |test| %>
     <tr>
-      <td><%= test.title %></td>
-      <td><%= test.category.title %></td>
-      <td><%= test.level %></td>
-      <td><%= test.questions.count %></td>
-      <td><%= link_to t('.show'), admin_test_path(test), type: "button", class: "btn btn-outline-secondary" %></td>
-      <td><%= link_to t('.edit'), edit_admin_test_path(test), type: "button", class: "btn btn-outline-secondary" %></td>
-      <td><%= link_to t('.delete'),
-              admin_test_path(test),
-              method: :delete,
-              data: { confirm: t('.confirm') },
-              type: "button", class: "btn btn-outline-secondary" %></td>
+      <td class="align-middle">
+        <%= content_tag :span, test.title, class: "test-title", data: { test_id: test.id} %>
+        <%= render 'form_inline', test: test == @test ? @test : test %>
+      </td>
+      <td class="align-middle"><%= test.category.title %></td>
+      <td class="align-middle"><%= test.level %></td>
+      <td class="align-middle"><%= test.questions.count %></td>
+      <td class="align-middle"><%= link_to t('.show'), admin_test_path(test), type: "button", class: "btn btn-outline-secondary" %></td>
+      <td class="align-middle">
+        <%= link_to t('.edit'), 
+                    edit_admin_test_path(test),
+                    data: { test_id: test.id},
+                    type: "button",
+                    class: "btn btn-outline-secondary form-inline-link" %>
+      </td>
+      <td class="align-middle">
+        <%= link_to t('.delete'),
+                    admin_test_path(test),
+                    method: :delete,
+                    data: { confirm: t('.confirm') },
+                    type: "button", class: "btn btn-outline-secondary" %>
+      </td>
     </tr>
   <% end %>
 </table>
