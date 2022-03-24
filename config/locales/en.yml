@@ -131,6 +131,8 @@ en:
         back: "Back"
       edit:
         header: "Editing the %{title} test"
+      form_inline:
+        submit: "Ok"
     gists:
       index:
         header: "List of created Gists"

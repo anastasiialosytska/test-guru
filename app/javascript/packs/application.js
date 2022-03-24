@@ -13,8 +13,12 @@ Turbolinks.start()
 ActiveStorage.start()
 
 //= require jquery3
+//= require jquery_ujs
 //= require popper
 //= require bootstrap-sprockets
+
 require("packs/utilities/sorting")
 require("packs/utilities/check_password")
+require("packs/utilities/form_inline")
+require("packs/utilities/progress")
 
