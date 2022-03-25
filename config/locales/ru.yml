@@ -85,6 +85,11 @@ ru:
       quantity_of_questions: "Количество вопросов"
       action: "Действие"
       start: "Начать"
+      recall: "Оставить отзыв"
+
+  recall: 
+    new:
+     recall: "Пожалуйста, оставьте свой отзыв о нашем приложении"
 
   test_passages:
     result:

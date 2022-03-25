@@ -11,6 +11,9 @@ class TestsController < ApplicationController
     redirect_to current_user.test_passage(@test)
   end
 
+  def recall
+  end
+
   private
 
   def set_test

@@ -80,6 +80,11 @@ en:
       quantity_of_questions: "Quantity of questions"
       action: "Action"
       start: "Start"
+      recall: "Leave feedback"
+
+  recall: 
+    new:
+     recall: "Please leave your feedback about our application"
 
   test_passages:
     result:
