@@ -13,6 +13,7 @@ class Test < ApplicationRecord
 
   validates :title, presence: true, uniqueness: { scope: :level }
   validates :level, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+  validate :ready_to_publish, on: :update, if: :is_ready
 
   def self.sort_tests_by_category(category_title)
     self.tests_by_category(category_title).order('tests.title DESC').pluck(:title)
@@ -20,5 +21,12 @@ class Test < ApplicationRecord
 
   def questions_count
     self.questions.count
+  end
+
+  private
+
+  def ready_to_publish
+    errors.add(:base, 'error') if
+      self.questions_count < 1
   end
 end
