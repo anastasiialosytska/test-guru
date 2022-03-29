@@ -3,7 +3,7 @@ class TestsController < ApplicationController
   before_action :set_test, only: %i[start]
 
   def index
-    @tests = Test.all.select { |test| test.is_ready == true}
+    @tests = Test.all.select { |test| test.is_ready == true }
   end
 
   def start

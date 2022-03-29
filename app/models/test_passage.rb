@@ -65,3 +65,4 @@ class TestPassage < ApplicationRecord
     self.current_question = test.questions.order(:id).where('id > ?', current_question.id).first
   end
 end
+

@@ -107,6 +107,8 @@ ru:
       success: "Gist успешно сохранен по %{html_url}"
       failure: "Во время сохранения gist произошла ошибка"
       link: "ссылке"
+    update:
+      error: "Пожалуйста, выберите хотя бы один вариант ответа"
 
   admin:
     tests:
@@ -129,6 +131,7 @@ ru:
         header: "Создание нового теста"
       form:
         back: "Назад"
+        is_ready: "Тест готов к публикации?"
       show:
         title: "Название:"
         level: "Уровень:"
@@ -143,6 +146,8 @@ ru:
         header: "Редактирование теста %{title}"
       form_inline:
         submit: "Ок"
+      update:
+        error: "Тест не может быть опубликован без вопросов"
     gists:
       index:
         header: "Список созданных Gist"

@@ -9,7 +9,11 @@ class TestPassagesController < ApplicationController
   end
 
   def update
-    @test_passage.accept!(params[:answer_ids])
+    if params[:answer_ids]&.any?
+      @test_passage.accept!(params[:answer_ids])
+    else
+      flash.now[:alert] = t('.error')
+    end
 
     if @test_passage.completed?
       TestsMailer.completed_test(@test_passage).deliver_now
@@ -39,5 +43,8 @@ class TestPassagesController < ApplicationController
   def set_test_passage
     @test_passage = TestPassage.find(params[:id])
   end
-end
 
+  def check_unswers
+
+  end
+end

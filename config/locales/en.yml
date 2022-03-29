@@ -102,6 +102,8 @@ en:
       success: "Gist was successfully created: %{html_url}"
       failure: "An error occured while saving gist"
       link: "link"
+    update:
+      error: "Please select at least one answer"
 
   admin:
     tests:
@@ -124,6 +126,7 @@ en:
         header: "Creating new test:"
       form:
         back: "Back"
+        is_ready: "Test is ready?"
       show:
         title: "Title:"
         level: "Level:"
@@ -138,6 +141,8 @@ en:
         header: "Editing the %{title} test"
       form_inline:
         submit: "Ok"
+      update:
+        error: "Test can not published without any question"
     gists:
       index:
         header: "List of created Gists"

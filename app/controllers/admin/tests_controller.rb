@@ -31,6 +31,7 @@ class Admin::TestsController < Admin::BaseController
     if @test.update(test_params)
       redirect_to [:admin, @test]
     else
+      flash.now[:alert] = t('.error')
       render :edit
     end
   end
@@ -44,6 +45,7 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def destroy
+    @test.test_passages.clear
     @test.destroy
     redirect_to admin_tests_path
   end
