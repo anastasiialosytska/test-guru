@@ -21,4 +21,4 @@ require("packs/utilities/sorting")
 require("packs/utilities/check_password")
 require("packs/utilities/form_inline")
 require("packs/utilities/progress")
-
+require("packs/utilities/test_timer")

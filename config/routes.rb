@@ -25,7 +25,10 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :gists, only: :index
+    resources :badges
   end
+
+  resources :badges
 
   namespace :admin do
     resources :tests do
