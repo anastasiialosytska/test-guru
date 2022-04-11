@@ -1,13 +1,13 @@
-# users = User.create([{first_name: 'Sergey', last_name: 'Ivanov', email: 'sergey.ivanov@gmail.com'},
-#                     {first_name: 'Anton', last_name: 'Sidorov', email: 'anton.sidorov@gmail.com'},
-#                     {first_name: 'Nikolay', last_name: 'Sergeev', email: 'nikolay.sergeev@gmail.com'},
-#                     {first_name: 'Elena', last_name: 'Petrova', email: 'elena.petrova@gmail.com'},
-#                     {first_name: 'Marina', last_name: 'Antonova', email: 'marina.antonova@gmail.com'}])
+user = User.create(first_name: 'Sergey', last_name: 'Ivanov', email: 'sergey.ivanov@gmail.com', password: '123456',
+                   password_confirmation: '123456')
+
+admin_user = User.create(first_name: 'Anton', last_name: 'Sidorov', email: 'anton.sidorov@gmail.com', password: '123456',
+                         password_confirmation: '123456', type: 'Admin')
 
 categories = Category.create([{title: 'Ruby'}, {title: 'JavaScript'}])
 
-tests = Test.create([{title: 'Ruby', category_id: categories[0].id, author_id: User.first.id},
-                    {title: 'JavaScript', category_id: categories[1].id, author_id: User.first.id}])
+tests = Test.create([{title: 'Ruby', category_id: categories[0].id, author_id: admin_user.id},
+                    {title: 'JavaScript', category_id: categories[1].id, author_id: admin_user.id}])
 
 questions = Question.create([{body: 'В каком варианте вы получите число без пропуска строки от пользователя?', test_id: tests[0].id},
                             {body: 'Как называется самый популярный фреймворк языка Ruby для веба?', test_id: tests[0].id},

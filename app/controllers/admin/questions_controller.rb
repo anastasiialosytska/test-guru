@@ -41,6 +41,7 @@ class Admin::QuestionsController < ApplicationController
   end
 
   def destroy
+    @question.test.test_passages.clear
     @question.destroy
 
     redirect_to [:admin, @test]

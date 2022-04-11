@@ -14,6 +14,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :recall, only: %i[new create]
+
   resources :test_passages, only: %i[show update] do
     member do
       get :result
@@ -34,4 +36,8 @@ Rails.application.routes.draw do
       end
     end
   end
+
+
 end
+
+
