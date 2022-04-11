@@ -8,6 +8,13 @@
     <strong><%= t('.level') %></strong>
     <%= @test.level %>
   </h3>
+
+  <% if @test.timer != 0 %>
+    <h3>
+      <strong>Time:</strong>
+      <%= @test.timer %> minute
+    </h3>
+  <% end %>
 </div>
 
 <p><%= link_to t('.edit'), edit_admin_test_path(@test), type: "button", class: "btn btn-outline-secondary" %></p>

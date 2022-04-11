@@ -6,10 +6,18 @@
       <%= link_to root_path, class: "btn btn-outline-primary" do %>
         <i class="bi bi-house-door"></i> TestGuru
       <% end %>
+      <% unless current_user.admin? %>
+        <%= link_to badges_path, class: "btn btn-outline-primary" do %>
+          <i class="bi bi bi-award"></i> Awards
+        <% end %> 
+      <% end %>
       <% if current_user.admin? %>
-        | <%= link_to admin_tests_path, class: "btn btn-outline-primary" do %>
-            <i class="bi bi-pencil"></i> AdminPanel
-          <% end %>
+        <%= link_to admin_tests_path, class: "btn btn-outline-primary" do %>
+          <i class="bi bi-pencil"></i> AdminPanel
+        <% end %>
+        <%= link_to admin_badges_path, class: "btn btn-outline-primary" do %>
+          <i class="bi bi bi-award"></i> Управление наградами
+        <% end %>
       <% end %>
     </span>
 
