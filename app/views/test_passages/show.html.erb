@@ -4,7 +4,7 @@
 
 <% if @test_passage.test.timer != 0 %>
   <div 
-    class="testTimer", data-timer = <%= @test_passage.test.timer %> data-id = <%= @test_passage.id %>>
+    class="testTimer", data-timer = <%= @test_passage.test.timer %> data-id = <%= @test_passage.id %> data-start = <%= @test_passage.created_at.to_i %>>
   </div>
 <% end %>
 
