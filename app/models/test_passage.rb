@@ -20,6 +20,10 @@ class TestPassage < ApplicationRecord
     current_question.nil?
   end
 
+  def time_over?
+    (self.created_at + self.test.timer.minutes).to_i <= Time.now.to_i
+  end
+
   def test_result
     if correct_questions.zero?
       0
