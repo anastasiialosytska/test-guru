@@ -2,6 +2,12 @@
   <h1 class="text-center border border-primary rounded-pill"><%= t('.header', title: @test_passage.test.title) %></h1>  
 </div>
 
+<% if @test_passage.test.timer != 0 %>
+  <div 
+    class="testTimer", data-timer = <%= @test_passage.test.timer %> data-id = <%= @test_passage.id %> data-start = <%= @test_passage.created_at.to_i %>>
+  </div>
+<% end %>
+
 <div class = "progressBar">
   <div class="barStatus" data-progress = <%= @test_passage.progress %>></div>
 </div>
@@ -17,7 +23,7 @@
 </div>
 
 <div class="row">
-  <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
+  <%= form_with url: test_passage_path(@test_passage), id: 'test-form', local: true, method: :put do |form| %>
     <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false do |b| %>
     <p>
       <%= b.check_box id: "answer_ids_#{b.object.id}" %>
