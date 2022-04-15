@@ -18,7 +18,10 @@ document.addEventListener('turbolinks:load', function() {
         clearInterval(x);
         control.innerHTML = "Время для прохождения теста вышло!"
         control.style.color = 'red'
-        setTimeout(function() { window.location.replace(location.origin + '/test_passages/' + control.dataset.id + '/result') }, 3000)
+        setTimeout(function() {
+         var form = document.getElementById('test-form')
+         form.submit()
+        }, 3000)
       }
     }, 1000)
   }

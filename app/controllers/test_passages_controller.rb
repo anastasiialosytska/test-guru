@@ -10,7 +10,7 @@ class TestPassagesController < ApplicationController
   end
 
   def update
-    if params[:answer_ids]&.any?
+    if params[:answer_ids]&.any? || @test_passage.time_over?
       @test_passage.accept!(params[:answer_ids])
     else
       flash.now[:alert] = t('.error')
