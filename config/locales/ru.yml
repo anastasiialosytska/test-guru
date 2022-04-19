@@ -47,16 +47,27 @@ ru:
       answer:
         create: "Создать ответ"
         update: "Обновить ответ"
+      badge:
+        create: "Создать новую награду"
+        update: "Обновить награду"
     label:
       test:
         title: "Название"
         level: "Уровень"
         category_id: "Категория"
+        timer: "Таймер"
       question:
         body: "Текст вопроса"
       answer:
         body: "Текст"
         correct: "Верно"
+      badge:
+        title: "Название"
+        icon: "Изображение"
+        rule: "Правило"
+        parameter: "Параметр"
+        description: "Описание награды"
+
     select:
       prompt: "Выберите вариант"
 
@@ -75,6 +86,8 @@ ru:
       login: "Войти"
       signup: "Зарегистрироваться"
       admin_panel: "Панель администратора"
+      awards: "Мои награды"
+      awards_management: "Управление наградами"
 
   tests:
     index:
@@ -86,6 +99,9 @@ ru:
       action: "Действие"
       start: "Начать"
       recall: "Оставить отзыв"
+      timer: "Таймер"
+      without_time: "Без времени"
+      minute: "минут"
 
   recall: 
     new:
@@ -110,6 +126,13 @@ ru:
     update:
       error: "Пожалуйста, выберите хотя бы один вариант ответа"
 
+  badges:
+    index:
+      title: "Мои награды"
+      my_awards: "Мои награды"
+      all_awards: "Доступные награды"
+      back: "Назад"
+
   admin:
     tests:
       create:
@@ -127,6 +150,9 @@ ru:
         delete: "Удалить"
         confirm: "Вы уверены?"
         gists: "Список созданных Gist"
+        timer: "Таймер"
+        without_time: "Без времени"
+        minute: "минут"
       new:
         header: "Создание нового теста"
       form:
@@ -187,6 +213,21 @@ ru:
         header: "Редактировать ответ"
       form:
         back: "Назад"
+    badges:
+      index:
+        title: "Управление наградами"
+        new_badge: "Создать новую награду"
+        all_awards: "Все награды"
+        edit: "Редактировать"
+        delete: "Удалить"
+        back: "Назад"
+        confirm: "Вы уверены?"
+      new:
+        title: "Создание новой награды"
+      form:
+        back: "Назад"
+      edit:
+        title: "Редактировать награду"
 
 
   tests_mailer:

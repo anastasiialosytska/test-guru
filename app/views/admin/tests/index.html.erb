@@ -17,6 +17,7 @@
         <th><%= t('.category') %></th>
         <th><%= t('.level') %></th>
         <th><%= t('.quantity_of_questions') %></th>
+        <th><%= t('.timer') %></th>
         <th colspan="3" class="text-center"><%= t('.action') %></th>
       </tr>
     </thead>
@@ -31,6 +32,13 @@
           <td class="align-middle"><%= test.category.title %></td>
           <td class="align-middle"><%= test.level %></td>
           <td class="align-middle"><%= test.questions.count %></td>
+          <td>
+            <% if test.timer == 0 %>
+              <%= t('.without_time') %>
+            <% else %>
+              <%= "#{test.timer} #{t('.minute')}" %>
+            <% end %>
+      </td>
           <td class="align-middle"><%= link_to t('.show'), admin_test_path(test), type: "button", class: "btn btn-outline-secondary" %></td>
           <td class="align-middle">
             <%= link_to t('.edit'), 
