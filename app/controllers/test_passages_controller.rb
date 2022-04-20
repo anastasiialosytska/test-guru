@@ -9,7 +9,8 @@ class TestPassagesController < ApplicationController
   def result
     if @test_passage.success?
       @test_passage.update_column(:success, true)
-      @test_passage.check_achievements(@test_passage.test)
+      current_user.badges << BadgeService.new(@test_passage).call
+      flash.now[:success] = 'Поздравляем, вы получили награду' if BadgeService.new(@test_passage).call.any?
     end
   end
 

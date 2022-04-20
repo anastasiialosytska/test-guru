@@ -1,5 +1,4 @@
 class TestPassage < ApplicationRecord
-  include BadgeCreator
 
   belongs_to :user
   belongs_to :test
