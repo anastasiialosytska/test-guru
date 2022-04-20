@@ -22,7 +22,7 @@ class TestPassagesController < ApplicationController
     end
 
     if @test_passage.completed? || @test_passage.time_over?
-      # TestsMailer.completed_test(@test_passage).deliver_now
+      TestsMailer.completed_test(@test_passage).deliver_now
       redirect_to result_test_passage_path(@test_passage)
       flash[:alert] = 'Время для прохождения теста вышло, тест не пройден' if @test_passage.time_over?
     else

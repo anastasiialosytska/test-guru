@@ -23,7 +23,7 @@ class TestPassage < ApplicationRecord
   end
 
   def time_over?
-    (self.created_at + self.test.timer.minutes).to_i <= Time.now.to_i
+    (self.created_at + self.test.timer.minutes).to_i <= Time.now.to_i && self.test.timer != 0
   end
 
   def test_result

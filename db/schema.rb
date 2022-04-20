@@ -27,11 +27,11 @@ ActiveRecord::Schema.define(version: 2022_04_19_075853) do
   create_table "badges", force: :cascade do |t|
     t.string "title", null: false
     t.string "icon", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
     t.integer "rule", default: 0
     t.string "parameter"
     t.string "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "badges_users", id: false, force: :cascade do |t|
