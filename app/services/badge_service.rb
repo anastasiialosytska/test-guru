@@ -12,19 +12,22 @@ class BadgeService
 
   def call
     Badge.all.select do |badge|
-      send("#{badge.rule}") && (badge.parameter == test.level.to_s || badge.parameter == test.category.title || badge.parameter == 'first_try')
+      badge if send("#{badge.rule}", badge.parameter)
     end
   end
   
-  def level
+  def level(param)
+    return false if param != test.level.to_s
     (Test.where(level: test.level).ids - successfuly_test_passages.pluck(:test_id)).empty?
   end
 
-  def category
+  def category(param)
+    return false if param != test.category.title
     (Test.tests_by_category(test.category.title).ids - successfuly_test_passages.pluck(:test_id)).empty?
   end
 
-  def first_try
+  def first_try(param)
+    return false if param != 'first_try'
     test_passage.success? && all_test_passages.where(test_id: test.id).count == 1
   end
 end
