@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   end
 
   resources :recall, only: %i[new create]
+  resources :badges
 
   resources :test_passages, only: %i[show update] do
     member do
@@ -25,6 +26,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :gists, only: :index
+    resources :badges
   end
 
   namespace :admin do

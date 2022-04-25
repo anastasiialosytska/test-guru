@@ -1,0 +1,30 @@
+<%= form_with model: [:admin, @badge], local: true do |form| %>
+  <div class="row">
+    <div class="form-group col-md-6">
+      <%= form.label :title %><br>
+      <%= form.text_field :title, id: :badge_title, class: 'form-control' %>
+    </div>
+    <div class="form-group col-md-6">
+      <%= form.label :icon %><br>
+      <%= form.text_field :icon, id: :badge_icon, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-md-6">
+      <%= form.label :rule %><br>
+      <%= form.collection_radio_buttons :rule, Badge.rules, :first, :first, class: 'form-control' %>
+    </div>
+    <div class="form-group col-md-6">
+      <%= form.label :parameter %>
+      <%= form.text_field :parameter, id: :badge_parameter, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= form.label :description %><br>
+    <%= form.text_field :description, id: :badge_description, class: 'form-control' %>
+  </div>
+
+  <p class="text-center"><%= form.submit class: 'btn btn-primary mt-2' %></p>
+<% end %>
+        
+<p><%= link_to t('.back'), admin_badges_path, class: 'btn btn-outline-secondary mt-3' %></p>

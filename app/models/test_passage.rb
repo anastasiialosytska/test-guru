@@ -1,10 +1,12 @@
 class TestPassage < ApplicationRecord
+
   belongs_to :user
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
 
   before_validation :before_validation_set_first_question, on: :create
   before_update :before_update_set_next_question
+  
 
   PERCENT_OF_CORRECT_ANSWERS = 85.0.freeze
 
@@ -21,7 +23,7 @@ class TestPassage < ApplicationRecord
   end
 
   def time_over?
-    (self.created_at + self.test.timer.minutes).to_i <= Time.now.to_i
+    (self.created_at + self.test.timer.minutes).to_i <= Time.now.to_i && self.test.timer != 0
   end
 
   def test_result

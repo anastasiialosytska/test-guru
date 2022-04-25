@@ -44,16 +44,26 @@ en:
       answer:
         create: "Create answer"
         update: "Update answer"
+      badge:
+        create: "Create a new award"
+        update: "Update answer"
     label:
       test:
         title: "Title"
         level: "Level"
         category_id: "Category"
+        timer: "Timer"
       question:
         body: "Body"
       answer:
         body: "Body"
         correct: "Correct"
+      badge:
+        title: "Title"
+        icon: "Icon"
+        rule: "Rule"
+        parameter: "Parameter"
+        description: "Description"
     select:
       prompt: "Please select"
 
@@ -70,6 +80,9 @@ en:
       login: "Log in"
       signup: "Sign up"
       admin_panel: "Admin Panel"
+      awards: "My awards"
+      awards_management: "Awards management"
+
 
   tests:
     index:
@@ -81,6 +94,9 @@ en:
       action: "Action"
       start: "Start"
       recall: "Leave feedback"
+      timer: "Timer"
+      without_time: "Without time"
+      minute: "minutes"
 
   recall: 
     new:
@@ -105,6 +121,13 @@ en:
     update:
       error: "Please select at least one answer"
 
+  badges:
+    index:
+      title: "My awards"
+      my_awards: "My awards"
+      all_awards: "Available rewards"
+      back: "Back"
+
   admin:
     tests:
       create:
@@ -122,6 +145,9 @@ en:
         delete: "Delete"
         confirm: "Are you sure?"
         gists: "Gists list"
+        timer: "Timer"
+        without_time: "Without time"
+        minute: "minutes"
       new:
         header: "Creating new test:"
       form:
@@ -182,6 +208,21 @@ en:
         header: "Edit answer"
       form:
         back: "Back"
+    badges:
+      index:
+        title: "Awards management"
+        new_badge: "Create new award"
+        all_awards: "All awards"
+        edit: "Edit"
+        delete: "Delete"
+        back: "Back"
+        confirm: "Are you sure?"
+      new:
+        title: "Creating a New Reward"
+      form:
+        back: "Back"
+      edit:
+        title: "Edit award"
 
   tests_mailer:
     completed_test:

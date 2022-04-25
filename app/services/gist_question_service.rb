@@ -33,3 +33,4 @@ class GistQuestionService
     content.join("\n")
   end
 end
+
